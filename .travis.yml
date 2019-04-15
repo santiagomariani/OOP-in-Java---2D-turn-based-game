@@ -1,0 +1,19 @@
+language: java
+jdk:
+  - oraclejdk8
+
+install: ant
+
+script:
+  - ant integracion-continua
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    recipients:
+      - julianferres@gmail.com
+      - santiagomariani2@gmail.com
+      - franciscojnasif@gmail.com
+      - ema_brea@hotmail.com
+    on_failure: always
